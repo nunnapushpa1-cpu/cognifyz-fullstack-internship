@@ -1,4 +1,8 @@
-# 🎓 Student Registration System | Cognifyz Full Stack Development Internship
+# 🎓 Cognifyz Full Stack Development Internship
+
+## Task 1 & Task 2
+
+### Student Registration System
 
 A Student Registration System developed using **Node.js**, **Express.js**, **EJS**, **HTML**, **CSS**, and **JavaScript** as part of my **Full Stack Development Internship at Cognifyz Technologies**.
 
@@ -153,5 +157,15 @@ B.Tech 2nd Year Student
 Full Stack Development Intern @ Cognifyz Technologies
 
 ---
+
+## 📌 Internship Progress
+
+| Task | Status |
+|------|--------|
+| Task 1 | ✅ Completed |
+| Task 2 | ✅ Completed |
+| Task 3 | ⏳ Pending |
+| Task 4 | ⏳ Pending |
+| Task 5 | ⏳ Pending |
 
 ⭐ If you found this project helpful, feel free to explore the repository and share your feedback.
