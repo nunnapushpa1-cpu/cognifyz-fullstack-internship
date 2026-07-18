@@ -152,7 +152,7 @@ http://localhost:3000
 
 **Nunna Pushpa**
 
-B.Tech 2nd Year Student
+Aspiring Full Stack Developer
 
 Full Stack Development Intern @ Cognifyz Technologies
 
