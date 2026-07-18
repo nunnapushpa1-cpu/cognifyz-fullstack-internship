@@ -1,64 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Registration</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
 
-    <div class="container">
-        <h1>Student Registration Form</h1>
+<body class="bg-light">
 
-        <% if (error) { %>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-2">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark" href="/">
+    <i class="bi bi-mortarboard-fill me-2"></i> Student Registration</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
-<div class="error">
-    <%= error %>
-</div>
+                <span class="navbar-toggler-icon"></span>
 
-<% } %>
-<form action="/submit" method="POST" onsubmit="return validateform();">
-    <label>Name:</label><br>
-    <input
-    type="text"
-    name="name"
-    id="name"
-    value="<%= formData.name || '' %>"><br><br>
+            </button>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" id="email" value="<%= formData.email || '' %>"><br><br>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-    <label>Phone Number:</label><br>
-    <input type="tel" name="phone" id="phone" value="<%= formData.phone || '' %>"><br><br>
+                <ul class="navbar-nav ms-auto">
 
-    <label>Age:</label><br>
-    <input type="number" name="age" id="age" value="<%= formData.age || '' %>"><br><br>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark fw-semibold" href="/">
+                            Home</a>
 
-    <label>Address:</label><br>
-    <input type="text" name="address" id="address" value="<%= formData.address || '' %>"><br><br>
+                    </li>
 
-    <label>Gender:</label><br>
-    <select name="gender" id="gender" value="<%= formData.gender || '' %>" required>
-         <option value="">Select Gender</option>
-         <option>Male</option>
-         <option>Female</option>
-        </select><br><br>
-    
+                    <li class="nav-item">
+                    <a class="nav-link text-dark fw-semibold" href="/students">
+    Students
+</a>
+                    </li>
 
-    <label>Course:</label><br>
-    <select name="course" id="course" value="<%= formData.course || '' %>" required>
-        <option value="">Select a course</option>
-        <option>Full Stack Development</option>
-        <option>Web Development</option>
-        <option>Java</option>
-        <option>Python</option>
-        </select><br><br>
+                </ul>
 
-        <button type="submit">Register</button>
+            </div>
 
-    </form>
-    <script src="/validation.js"></script>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+
+    <div class="container mt-5">
+
+        <div class="card shadow-lg border-0 rounded-4">
+
+            <div class="card-body p-5">
+
+                <h1 class="text-center text-dark fw-bold mb-4">
+                    Student Registration
+                </h1>
+
+                <% if (error) { %>
+
+                    <div class="alert alert-danger">
+                        <%= error %>
+                    </div>
+
+                <% } %>
+
+                <form action="/submit" method="POST">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Name</label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="form-control"
+                            value="<%= formData.name || '' %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control"
+                            value="<%= formData.email || '' %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Phone Number</label>
+
+                        <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            class="form-control"
+                            value="<%= formData.phone || '' %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Age</label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            id="age"
+                            class="form-control"
+                            value="<%= formData.age || '' %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Address</label>
+
+                        <input
+                            type="text"
+                            name="address"
+                            id="address"
+                            class="form-control"
+                            value="<%= formData.address || '' %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Gender</label>
+
+                        <select
+                            name="gender"
+                            id="gender"
+                            class="form-select">
+
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">Course</label>
+
+                        <select
+                            name="course"
+                            id="course"
+                            class="form-select">
+
+                            <option value="">Select Course</option>
+                            <option>Full Stack Development</option>
+                            <option>Web Development</option>
+                            <option>Java</option>
+                            <option>Python</option>
+
+                        </select>
+
+                    </div>
+                
+                    <button
+    type="submit"
+    class="btn btn-primary btn-lg w-100">
+
+    <i class="bi bi-person-plus-fill me-2"></i>
+
+    Register Student
+
+</button>
+
+                       </form>
+
+            </div>
+
+        </div>
 
     </div>
+
+    <!-- Bootstrap JS -->
+<footer class="text-center mt-5 mb-3 text-muted">
+    <small>© 2026 Student Registration System | Cognifyz Internship</small>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Validation -->
+
+    <script src="/validation.js"></script>
 
 </body>
 </html>

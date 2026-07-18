@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
+    color: #333;
 }
 
 .container {
@@ -16,7 +17,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #020000;
 }
 
 input {
@@ -29,18 +30,12 @@ button {
     width: 100%;
     padding: 10px;
     background: #007BFF;
-    color: white;
+    color: rgb(13, 13, 13);
     border: none;
     cursor: pointer;
 }
 
-button:hover {
-    background: #0056b3;
-}
-
 .error{
-    
-    padding:12px;
     background:#ffe5e5;
     
     padding:12px;

@@ -1,50 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Students List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Students</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
+<body class="bg-light">
 
-<div class="container">
+    <!-- Navbar -->
 
-<h1>Registered Students</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-2">
 
-<table border="1" cellpadding="10">
+        <div class="container">
 
-<tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Address</th>
-    <th>Age</th>
-    <th>Gender</th>
-    <th>Course</th>
-</tr>
+            <a class="navbar-brand fw-bold text-dark" href="/">
+                <i class="bi bi-mortarboard-fill me-2"></i>
+                Student Registration
+            </a>
 
-<% students.forEach(student => { %>
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
 
-<tr>
-    <td><%= student.name %></td>
-    <td><%= student.email %></td>
-    <td><%= student.phone %></td>
-    <td><%= student.address %></td>
-    <td><%= student.age %></td>
-    <td><%= student.gender %></td>
-    <td><%= student.course %></td>
-</tr>
+                <span class="navbar-toggler-icon"></span>
 
-<% }) %>
+            </button>
 
-</table>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-<br>
+                <ul class="navbar-nav ms-auto">
 
-<a href="/">Register Another Student</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" href="/">
+                            Home
+                        </a>
+                    </li>
 
-</div>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark fw-semibold" href="/students">
+                            Students
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Students Table -->
+
+    <div class="container mt-5">
+
+        <div class="card shadow-lg border-0 rounded-4">
+
+            <div class="card-body p-4">
+
+                <h2 class="text-center text-primary fw-bold mb-4">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Registered Students
+                </h2>
+
+                <div class="table-responsive">
+
+                    <table class="table table-striped table-hover table-bordered align-middle">
+
+                        <thead class="table-primary">
+
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Course</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <% students.forEach(student => { %>
+
+                                <tr>
+
+                                    <td><%= student.name %></td>
+                                    <td><%= student.email %></td>
+                                    <td><%= student.phone %></td>
+                                    <td><%= student.address %></td>
+                                    <td><%= student.age %></td>
+                                    <td><%= student.gender %></td>
+                                    <td><%= student.course %></td>
+
+                                </tr>
+
+                            <% }) %>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="text-center mt-4">
+
+                    <a href="/" class="btn btn-primary">
+
+                        <i class="bi bi-arrow-left me-2"></i>
+
+                        Register Another Student
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="text-center mt-5 mb-3 text-muted">
+
+        <small>
+            © 2026 Student Registration System | Cognifyz Internship
+        </small>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
