@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Students List</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Registered Students</h1>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Course</th>
+</tr>
+
+<% students.forEach(student => { %>
+
+<tr>
+    <td><%= student.name %></td>
+    <td><%= student.email %></td>
+    <td><%= student.phone %></td>
+    <td><%= student.address %></td>
+    <td><%= student.age %></td>
+    <td><%= student.gender %></td>
+    <td><%= student.course %></td>
+</tr>
+
+<% }) %>
+
+</table>
+
+<br>
+
+<a href="/">Register Another Student</a>
+
+</div>
+
+</body>
+
+</html>
