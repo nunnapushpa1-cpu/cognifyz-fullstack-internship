@@ -172,27 +172,26 @@ Example JSON:
 
 ## Student Registration Form
 
-*(Add Screenshot)*
+![Student Registration](screenshots/homepage.png)
 
 ---
 
 ## Students List
 
-*(Add Screenshot)*
+![Students List](screenshots/registeredstudents.png)
 
 ---
 
 ## Edit Student
 
-*(Add Screenshot)*
+![Edit Student](screenshots/editpage.png)
 
 ---
 
 ## Registration Success Page
 
-*(Add Screenshot)*
+![Success Page](screenshots/successpage.png)
 
----
 
 # 👨‍💻 Author
 
