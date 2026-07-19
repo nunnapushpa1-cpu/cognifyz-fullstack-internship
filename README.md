@@ -1,43 +1,42 @@
 # 🎓 Cognifyz Full Stack Development Internship
 
-## Task 1 & Task 2
+## Student Registration System
 
-### Student Registration System
-
-A Student Registration System developed using **Node.js**, **Express.js**, **EJS**, **HTML**, **CSS**, and **JavaScript** as part of my **Full Stack Development Internship at Cognifyz Technologies**.
+A Student Registration System developed using **Node.js**, **Express.js**, **EJS**, **Bootstrap 5**, **HTML**, **CSS**, and **JavaScript** as part of my **Full Stack Development Internship at Cognifyz Technologies**.
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
-This project allows users to register student details through a responsive registration form. It performs both **client-side** and **server-side validation** to ensure accurate user input.
+This project is a complete Student Registration System that allows users to register, view, edit, and delete student records.
 
-After successful registration, student details are displayed on a success page and stored temporarily in memory, allowing users to view all registered students on a dedicated Students List page.
+The application performs both **client-side** and **server-side validation**, provides a responsive Bootstrap interface, and exposes REST API endpoints for managing student data.
+
+Student data is currently stored temporarily using an in-memory array.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
 - Student Registration Form
+- View Registered Students
+- Edit Student Details
+- Delete Student Details
 - Client-side Validation
 - Server-side Validation
-- Name Validation
-- Email Validation
-- Phone Number Validation
-- Age Validation
-- Gender Selection
-- Course Selection
+- REST API (GET)
+- REST API (POST)
+- Responsive Bootstrap 5 UI
 - Success Page
-- Registered Students List
-- Responsive User Interface
 - Temporary Data Storage using Array
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 - HTML5
 - CSS3
+- Bootstrap 5
 - JavaScript (ES6)
 - Node.js
 - Express.js
@@ -45,7 +44,7 @@ After successful registration, student details are displayed on a success page a
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```text
 cognifyz-fullstack-internship/
@@ -56,8 +55,9 @@ cognifyz-fullstack-internship/
 │
 ├── views/
 │   ├── index.ejs
+│   ├── students.ejs
 │   ├── success.ejs
-│   └── students.ejs
+│   └── edit.ejs
 │
 ├── app.js
 ├── package.json
@@ -68,49 +68,86 @@ cognifyz-fullstack-internship/
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/nunnapushpa1-cpu/cognifyz-fullstack-internship.git
 ```
 
-### Navigate to the project folder
+### Open Project
 
 ```bash
 cd cognifyz-fullstack-internship
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Run the application
+### Start Server
 
 ```bash
 node app.js
 ```
 
-### Open in Browser
+### Open Browser
 
-```text
+```
 http://localhost:3000
 ```
 
 ---
 
-## 📚 Concepts Learned
+# 🌐 REST API Endpoints
+
+## Get All Students
+
+```http
+GET /api/students
+```
+
+Returns all registered students.
+
+---
+
+## Add Student
+
+```http
+POST /api/students
+```
+
+Example JSON:
+
+```json
+{
+  "name": "Pushpa",
+  "email": "pushpa@gmail.com",
+  "phone": "9876543210",
+  "address": "Vizag",
+  "age": 20,
+  "gender": "Female",
+  "course": "Full Stack Development"
+}
+```
+
+---
+
+# 📚 Concepts Learned
 
 - Express Server Setup
 - Express Routing
 - Middleware
 - GET Requests
 - POST Requests
+- REST API Development
+- CRUD Operations
 - Request Body Handling
 - EJS Template Engine
+- Bootstrap 5
 - Client-side Validation
 - Server-side Validation
 - Static File Serving
@@ -119,36 +156,45 @@ http://localhost:3000
 
 ---
 
-## 🔮 Future Improvements
+# 🔮 Future Improvements
 
 - MongoDB Database Integration
 - User Authentication
-- Edit Student Details
-- Delete Student Details
 - Search Students
 - Pagination
-- Dashboard with Statistics
-- Fully Responsive Mobile Design
+- Dashboard
+- Export Student Data (PDF / Excel)
+- Image Upload
 
 ---
 
-## 📷 Screenshots
+# 📷 Screenshots
 
-### Student Registration Form
+## Student Registration Form
 
-*(Screenshot will be added after completing all internship tasks.)*
-
-### Registration Success Page
-
-*(Screenshot will be added after completing all internship tasks.)*
-
-### Registered Students List
-
-*(Screenshot will be added after completing all internship tasks.)*
+*(Add Screenshot)*
 
 ---
 
-## 👨‍💻 Author
+## Students List
+
+*(Add Screenshot)*
+
+---
+
+## Edit Student
+
+*(Add Screenshot)*
+
+---
+
+## Registration Success Page
+
+*(Add Screenshot)*
+
+---
+
+# 👨‍💻 Author
 
 **Nunna Pushpa**
 
@@ -158,14 +204,16 @@ Full Stack Development Intern @ Cognifyz Technologies
 
 ---
 
-## 📌 Internship Progress
+# 📌 Internship Progress
 
 | Task | Status |
 |------|--------|
 | Task 1 | ✅ Completed |
 | Task 2 | ✅ Completed |
-| Task 3 | ⏳ Pending |
-| Task 4 | ⏳ Pending |
-| Task 5 | ⏳ Pending |
+| Task 3 | ✅ Completed |
+| Task 4 | ✅ Completed |
+| Task 5 | ✅ Completed |
 
-⭐ If you found this project helpful, feel free to explore the repository and share your feedback.
+---
+
+⭐ If you found this project helpful, feel free to explore the repository.
