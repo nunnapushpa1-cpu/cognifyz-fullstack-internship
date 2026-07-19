@@ -10,6 +10,8 @@ app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.json());
+
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
@@ -94,6 +96,47 @@ app.get("/students", (req, res) => {
         students
     });
 });
+
+// ===============================
+// REST API
+// ===============================
+
+// Get all students
+app.get("/api/students", (req, res) => {
+    res.json(students);
+});
+
+// Add new student
+
+app.post("/api/students", (req, res) => {
+
+    const { name, email, phone, address, age, gender, course } = req.body;
+
+    if (!name || !email || !phone || !address || !age || !gender || !course) {
+        return res.status(400).json({
+            message: "All fields are required."
+        });
+    }
+
+    const student = {
+        name,
+        email,
+        phone,
+        address,
+        age,
+        gender,
+        course
+    };
+
+    students.push(student);
+
+    res.status(201).json({
+        message: "Student added successfully",
+        student
+    });
+
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
