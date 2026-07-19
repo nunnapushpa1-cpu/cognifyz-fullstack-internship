@@ -137,6 +137,45 @@ app.post("/api/students", (req, res) => {
 
 });
 
+// Delete Student
+
+app.get("/delete/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    students.splice(id, 1);
+
+    res.redirect("/students");
+
+});
+
+// Edit Student
+
+app.get("/edit/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    const student = students[id];
+
+    res.render("edit", {
+        id,
+        student
+    });
+
+});
+
+// Update Student
+
+app.post("/update/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    students[id] = req.body;
+
+    res.redirect("/students");
+
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
