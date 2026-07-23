@@ -1,7 +1,171 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #333;
+/* ==============================
+   DESIGN SYSTEM
+============================== */
+
+:root{
+    --primary:#6366F1;
+    --primary-dark:#4F46E5;
+
+    --bg:#F8FAFC;
+    --surface:#FFFFFF;
+
+    --text:#0F172A;
+    --muted:#64748B;
+
+    --border:#E2E8F0;
+
+    --success:#22C55E;
+    --danger:#EF4444;
+
+    --radius:20px;
+
+    --shadow:
+        0 15px 50px rgba(15,23,42,.08);
+
+    --transition:.3s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg,#EEF2FF,#F8FAFC);
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.custom-navbar{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:20px;
+
+    margin:25px auto;
+
+    width:min(1200px,95%);
+
+    box-shadow:var(--shadow);
+
+    padding:14px 0;
+}
+
+.navbar-brand{
+
+    font-size:1.5rem;
+
+    font-weight:800;
+
+    color:var(--primary)!important;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.nav-link{
+
+    color:var(--text)!important;
+
+    font-weight:600;
+
+    margin-left:20px;
+
+    transition:var(--transition);
+}
+
+.nav-link:hover{
+
+    color:var(--primary)!important;
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.hero-section{
+
+    padding:70px 0;
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:#EEF2FF;
+
+    color:var(--primary);
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+}
+
+.hero-title{
+
+    font-size:3.3rem;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    margin-bottom:18px;
+}
+
+.hero-title span{
+
+    color:var(--primary);
+}
+
+.hero-text{
+
+    color:var(--muted);
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.hero-features{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.hero-features div{
+
+    font-weight:600;
+}
+
+.hero-features i{
+
+    color:var(--success);
+
+    margin-right:10px;
 }
 
 .container {
