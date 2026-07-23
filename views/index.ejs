@@ -5,55 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Registration</title>
+    <title>StudentHub</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
 
-    <link rel="stylesheet" href="/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="bg-light">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-2">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-dark" href="/">
-    <i class="bi bi-mortarboard-fill me-2"></i> Student Registration</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg custom-navbar">
 
-                <span class="navbar-toggler-icon"></span>
+<div class="container">
 
-            </button>
+<a class="navbar-brand" href="/">
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+<i class="bi bi-mortarboard-fill"></i>
 
-                <ul class="navbar-nav ms-auto">
+<span>StudentHub</span>
 
-                    <li class="nav-item">
-                        <a class="nav-link active text-dark fw-semibold" href="/">
-                            Home</a>
-
-                    </li>
-
-                    <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="/students">
-    Students
 </a>
-                    </li>
 
-                </ul>
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
 
-            </div>
+<span class="navbar-toggler-icon"></span>
 
-        </div>
-    </nav>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link active" href="/">Home</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="/students">Students</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
 
     <!-- Main Container -->
 
@@ -64,7 +82,7 @@
             <div class="card-body p-5">
 
                 <h1 class="text-center text-dark fw-bold mb-4">
-                    Student Registration
+                    StudentHub
                 </h1>
 
                 <% if (error) { %>
