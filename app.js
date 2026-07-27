@@ -231,7 +231,7 @@ app.get("/admin/dashboard", requireAdmin, (req, res) => {
 
 app.get("/admin/register", requireAdmin, (req, res) => {
 
-    res.render("index", {
+    res.render("admin-register", {
         error: null,
         formData: {}
     });
