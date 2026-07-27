@@ -119,6 +119,76 @@
 
 </div>
 
+<div class="quick-actions">
+
+    <h3>⚡ Quick Actions</h3>
+
+    <div class="recent-students mt-5">
+
+    <h3>👨‍🎓 Recent Students</h3>
+
+    <% if(students.length===0){ %>
+
+        <p class="text-muted mt-3">
+            No students registered yet.
+        </p>
+
+    <% } else { %>
+
+        <table class="table mt-3">
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Course</th>
+
+                    <th>Email</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% students.slice().reverse().slice(0,5).forEach(student=>{ %>
+
+                    <tr>
+
+                        <td><%= student.name %></td>
+
+                        <td><%= student.course %></td>
+
+                        <td><%= student.email %></td>
+
+                    </tr>
+
+                <% }) %>
+
+            </tbody>
+
+        </table>
+
+    <% } %>
+
+</div>
+
+    <div class="action-buttons">
+
+        <a href="/admin/register" class="btn btn-primary">
+            ➕ Register Student
+        </a>
+
+        <a href="/admin/students" class="btn btn-success">
+            👨‍🎓 Manage Students
+        </a>
+
+    </div>
+
+</div>
+
 </body>
 
 </html>

@@ -143,3 +143,18 @@ font-weight:700;
 .menu li:hover a{
     color:white;
 }
+.quick-actions,
+.recent-students{
+    margin-top:35px;
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.action-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
