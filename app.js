@@ -1,7 +1,14 @@
 const express = require("express");
 
-const app = express();
+const session = require("express-session");
+const bcrypt = require("bcrypt");
 
+const app = express();
+const ADMIN = {
+    email: "admin@studenthub.com",
+    password: "Admin@123"
+};
+const requireAdmin = require("./middleware/auth");
 const PORT = process.env.PORT || 3000;
 
 let students = [];
@@ -13,6 +20,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
+
+app.use(session({
+    secret: "studenthub-secret-key",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60
+    }
+}));
 
 app.get("/", (req, res) => {
     res.render("index", {
@@ -173,6 +189,55 @@ app.post("/update/:id", (req, res) => {
     students[id] = req.body;
 
     res.redirect("/students");
+
+});
+
+app.get("/admin", (req, res) => {
+
+    res.render("admin-login");
+
+});
+
+app.post("/admin/login", async (req, res) => {
+
+    const { email, password } = req.body;
+
+    if (
+        email === ADMIN.email &&
+        password === ADMIN.password
+    ) {
+
+        req.session.isAdmin = true;
+
+        return res.redirect("/dashboard");
+
+    }
+
+    res.render("admin-login", {
+
+        error: "Invalid email or password"
+
+    });
+
+});
+
+app.get("/dashboard", requireAdmin, (req, res) => {
+
+    res.render("dashboard", {
+
+    students
+
+});
+
+});
+
+app.get("/admin/logout", (req, res) => {
+
+    req.session.destroy(() => {
+
+        res.redirect("/admin");
+
+    });
 
 });
 
