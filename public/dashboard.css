@@ -133,3 +133,13 @@ font-size:34px;
 font-weight:700;
 
 }
+.menu a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    width:100%;
+}
+
+.menu li:hover a{
+    color:white;
+}

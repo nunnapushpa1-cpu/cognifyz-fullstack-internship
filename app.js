@@ -209,7 +209,7 @@ app.post("/admin/login", async (req, res) => {
 
         req.session.isAdmin = true;
 
-        return res.redirect("/dashboard");
+        return res.redirect("/admin/dashboard");
 
     }
 
@@ -221,13 +221,28 @@ app.post("/admin/login", async (req, res) => {
 
 });
 
-app.get("/dashboard", requireAdmin, (req, res) => {
+app.get("/admin/dashboard", requireAdmin, (req, res) => {
 
     res.render("dashboard", {
-
-    students
+        students
+    });
 
 });
+
+app.get("/admin/register", requireAdmin, (req, res) => {
+
+    res.render("index", {
+        error: null,
+        formData: {}
+    });
+
+});
+
+app.get("/admin/students", requireAdmin, (req, res) => {
+
+    res.render("students", {
+        students
+    });
 
 });
 
@@ -239,6 +254,14 @@ app.get("/admin/logout", (req, res) => {
 
     });
 
+});
+
+app.get("/admin/analytics", requireAdmin, (req, res) => {
+    res.send("<h2>Analytics Coming Soon 🚀</h2>");
+});
+
+app.get("/admin/settings", requireAdmin, (req, res) => {
+    res.send("<h2>Settings Coming Soon ⚙️</h2>");
 });
 
 app.listen(PORT, () => {
