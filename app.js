@@ -37,6 +37,15 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/register", (req, res) => {
+
+    res.render("register", {
+        error: null,
+        formData: {}
+    });
+
+});
+
 app.use((req, res, next) => {
     console.log(req.method, req.url);
     next();
