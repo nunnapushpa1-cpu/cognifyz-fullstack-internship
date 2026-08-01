@@ -53,6 +53,7 @@ app.use((req, res, next) => {
 console.log("POST route loaded");
 
 app.post("/submit", (req, res) => {
+    console.log("POST /submit HIT");
 
     const {
         name,
@@ -67,28 +68,28 @@ app.post("/submit", (req, res) => {
     // Server-side Validation
 
     if (!name || name.length < 3) {
-        return res.render("index", {
+        return res.render("register", {
     error: "Name must contain at least 3 characters.",
     formData: req.body
 });
     }
 
     if (!email.includes("@")) {
-        return res.render("index", {
+        return res.render("register", {
     error: "Invalid Email Address.",
     formData: req.body
 });
     }
 
     if (phone.length !== 10) {
-        return res.render("index", {
+        return res.render("register", {
     error: "Phone Number must contain 10 digits.",
     formData: req.body
 });
     }
 
     if (age < 18 || age > 60) {
-        return res.render("index", {
+        return res.render("register", {
     error: "Age must be between 18 and 60.",
     formData: req.body
 });
@@ -105,14 +106,14 @@ app.post("/submit", (req, res) => {
 });
 
 res.render("success", {
-        name,
-        email,
-        phone,
-        address: req.body.address,
-        age,
-        gender,
-        course
-    });
+    name,
+    email,
+    phone,
+    address: req.body.address,
+    age,
+    gender,
+    course
+});
 
 });
 
