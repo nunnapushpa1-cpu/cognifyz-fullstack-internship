@@ -16,19 +16,29 @@ Student data is currently stored temporarily using an in-memory array.
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
-- Student Registration Form
+### Student
+
+- Student Registration
 - View Registered Students
-- Edit Student Details
-- Delete Student Details
 - Client-side Validation
 - Server-side Validation
-- REST API (GET)
-- REST API (POST)
-- Responsive Bootstrap 5 UI
-- Success Page
-- Temporary Data Storage using Array
+- Responsive Bootstrap UI
+
+### Admin
+
+- Secure Admin Login
+- Session Authentication
+- Protected Dashboard
+- View Students
+- Edit Student Details
+- Delete Student Records
+
+### API
+
+- GET /api/students
+- POST /api/students
 
 ---
 
@@ -41,6 +51,8 @@ Student data is currently stored temporarily using an in-memory array.
 - Node.js
 - Express.js
 - EJS
+- Express Session
+- Bootstrap Icons
 
 ---
 
@@ -162,9 +174,10 @@ Example JSON:
 - User Authentication
 - Search Students
 - Pagination
-- Dashboard
 - Export Student Data (PDF / Excel)
 - Image Upload
+- Student Profile Images
+- JWT Authentication
 
 ---
 
@@ -191,6 +204,16 @@ Example JSON:
 ## Registration Success Page
 
 ![Success Page](screenshots/successpage.jpeg)
+
+## Admin Login
+
+![Admin Login](screenshots/adminlogin.jpeg)
+
+---
+
+## Admin Dashboard
+
+![Dashboard](screenshots/dashboard.jpeg)
 
 
 # 👨‍💻 Author
