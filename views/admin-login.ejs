@@ -3,83 +3,108 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | StudentHub</title>
 
-<title>Admin Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css">
 
 </head>
 
-<body>
-    <div class="row justify-content-center">
+<body class="bg-light">
 
-<div class="login-page">
+<div class="container vh-100 d-flex justify-content-center align-items-center">
 
-<div class="login-card">
+    <div class="card shadow-lg border-0 rounded-4 p-5" style="max-width:450px; width:100%;">
 
-<div class="login-icon">
+        <div class="text-center mb-4">
 
-🛡️
+            <div class="display-4 text-primary">
+                <i class="bi bi-shield-lock-fill"></i>
+            </div>
 
-</div>
+            <h2 class="fw-bold mt-2">
+                Admin Login
+            </h2>
 
-<h2>Admin Login</h2>
+            <p class="text-muted">
+                StudentHub Administration Panel
+            </p>
 
-<p>StudentHub Administration Panel</p>
+        </div>
 
-<% if(typeof error !== "undefined"){ %>
+        <% if(typeof error !== "undefined"){ %>
 
-<div class="alert alert-danger">
+            <div class="alert alert-danger">
+                <%= error %>
+            </div>
 
-<%= error %>
+        <% } %>
 
-</div>
+        <form action="/admin/login" method="POST">
 
-<% } %>
+            <div class="mb-3">
 
-<form action="/admin/login" method="POST">
+                <label class="form-label">
+                    <i class="bi bi-envelope-fill me-2"></i>Email
+                </label>
 
-<div class="mb-3">
+                <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter Admin Email"
+                    required>
 
-<label>Email</label>
+            </div>
 
-<input
-type="email"
-name="email"
-class="form-control"
-required>
+            <div class="mb-4">
 
-</div>
+                <label class="form-label">
+                    <i class="bi bi-lock-fill me-2"></i>Password
+                </label>
 
-<div class="mb-4">
+                <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                    required>
 
-<label>Password</label>
+            </div>
 
-<input
-type="password"
-name="password"
-class="form-control"
-required>
+            <button class="btn btn-primary w-100 py-2">
 
-</div>
+                <i class="bi bi-box-arrow-in-right me-2"></i>
 
-<button class="btn btn-primary w-100">
+                Login
 
-Login
+            </button>
 
-</button>
+        </form>
 
-</form>
+        <hr>
 
-</div>
+        <div class="text-center">
 
-</div>
+            <a href="/" class="btn btn-outline-secondary">
+
+                <i class="bi bi-house-door-fill me-2"></i>
+
+                Back to Home
+
+            </a>
+
+        </div>
+
     </div>
+
+</div>
 
 </body>
 
